@@ -32,11 +32,32 @@ function pagedArr(array, tagName, item_per_page, current_page) {
   let start = current_page * item_per_page;
   let end = start + item_per_page;
   let pagedArray = array.slice(start, end)
-  for (let i = 0; i <= pagedArray.length; i++) {
+  for (let i = 0; i < pagedArray.length; i++) {
     renderArr(array[i].recipe, tagName)
   }
 }
 
 function renderArr(array, tagName) {
-
+  const span = document.createElement('span')
+  const img = document.createElement('img')
+  const foodList = document.createElement('li')
+  const h3 = document.createElement('h3')
+  const mainP = document.createElement('p')
+  img.src = array.images.THUMBNAIL.url
+  img.alt = "No Image"
+  h3.textContent = array.label
+  mainP.textContent = `Cuisine Type : ${array.cuisineType}`
+  span.append(h3, mainP)
+  foodList.append(span, img)
+  tagName.append(foodList)
+  mainP.addEventListener('click', () => {
+    const ingredContainer = document.querySelector('#ingredContainer')
+    ingredContainer.innerHTML = ''
+    ingredContainer.textContent = "INGREDIENTS"
+    array.ingredientLines.forEach(ingred => {
+      const asideP = document.createElement('p')
+      asideP.textContent = ingred
+      ingredContainer.append(asideP)
+    })
+  })
 }
