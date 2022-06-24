@@ -19,9 +19,9 @@ body,html {
 }
 header {
     text-align: center;
-    background: #AEC6CF;
-    padding: 20px 30px;
-    max-width: 940px;
+    background: #b0e5a0;
+    padding: 10px 30px;
+    max-width: 850px;
     margin: auto;
 }
 #form {
@@ -29,7 +29,7 @@ header {
     font-size: 20px;
 }
 #pageContent {
-    max-width: 1000px;
+    max-width: 800px;
     margin: auto;
     border: none;
 }
@@ -39,7 +39,8 @@ main {
 }
 aside {
 	float: right;
-	width: 30%;
+	width: 35%;
+  
 }
 article {
     border-bottom: 2px dotted #999;
@@ -58,7 +59,7 @@ main section {
 }
 footer {
 	background: #AEC6CF;
-	max-width: 1000px;
+	max-width: 900px;
 	margin: auto;
 	clear: both;
 	text-align: right;
@@ -71,30 +72,26 @@ address {
 }
 aside > div {
 	margin: 10px auto;
-	background: #AEC6CF;
+	background: #cef2a8;
 	min-height: 100px;
 }
-#logo {
+#header {
     display: inline-block;
     vertical-align: middle;
-    font-size: 30px;
+    font-size: 40px;
     margin-right: 75px;
-    color: #FFF;
+    color: rgb(255, 255, 255);
 }
-#logo img {
-    width: 50px;
-    vertical-align: middle;
-    margin-right: 10px;
-}
+
 body > section {
-    max-width: 1000px;
+    max-width: 900px;
     margin: auto;
-    padding: 30px 0px;
+    padding: 20px 0px;
     border-bottom: 1px solid #999;
     color: #333;
 }
 
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 900px) {
 	body > section {
 		padding: 30px 20px;
 	}
