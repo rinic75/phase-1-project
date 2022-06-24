@@ -58,23 +58,27 @@ main section {
 	
 }
 footer {
-	background: #AEC6CF;
+	background: #e1eed4;
 	max-width: 900px;
 	margin: auto;
 	clear: both;
-	text-align: right;
+	text-align: left;
 }
 footer p {
-	padding: 20px;
+	padding: 5px;
+  margin-left : 40px;
 }
-address {
-    padding: 10px 20px 30px 10px;
-}
+
 aside > div {
 	margin: 10px auto;
 	background: #cef2a8;
 	min-height: 100px;
 }
+
+aside div p {
+  padding : 10px;
+}
+
 #header {
     display: inline-block;
     vertical-align: middle;
