@@ -39,7 +39,7 @@ function pagedArr(array, tagName, item_per_page, current_page) {
 
 function renderArr(array, tagName) {
   const img = document.createElement('img')
-  const foodList = document.createElement('li')
+  const foodList = document.createElement('div')
   const h3 = document.createElement('h3')
   const mainP = document.createElement('p')
   img.src = array.images.THUMBNAIL.url
@@ -47,7 +47,7 @@ function renderArr(array, tagName) {
   foodList.id = "foodList"
   h3.textContent = array.label
   mainP.textContent = `Cuisine Type : ${array.cuisineType}`
-  foodList.append(h3, mainP, img)
+  foodList.append(img, h3, mainP)
   tagName.append(foodList)
   h3.addEventListener('click', () => {
     const ingredContainer = document.querySelector('#ingredContainer')

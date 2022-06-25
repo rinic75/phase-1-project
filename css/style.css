@@ -46,12 +46,14 @@ aside {
     border-bottom: 2px dotted #999;
     padding-bottom: 20px;
     margin-bottom: 20px;
+    overflow: hidden;
 }
 #foodList img {
-    
+    float: left;
+    margin-right: 20px;
 }
 #foodList h3 {
-    align-content: left;
+    margin-top: 20px;
     font-weight: normal;
     margin-bottom: 12px;
     
