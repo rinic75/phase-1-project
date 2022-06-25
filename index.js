@@ -68,7 +68,6 @@ function renderArr(array, tagName) {
   h3.addEventListener('click', () => {
     const ingredContainer = document.querySelector('#ingredContainer')
     ingredContainer.innerHTML = ''
-    ingredContainer.textContent = "INGREDIENTS"
     array.ingredientLines.forEach(ingred => {
       const asideP = document.createElement('p')
       asideP.textContent = ingred
@@ -91,5 +90,7 @@ function sortBttn(array) {
   </select>
   `
   const select = div.querySelector('#dietlabel')
-  select.addEventListener('change', e => {console.log(e.target.value)
-})
+  select.addEventListener('change', e => {
+    
+  })
+}
