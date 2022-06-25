@@ -28,27 +28,29 @@ function fetchFood(foodName, mealtype) {
 
 function pagedArr(array, tagName, item_per_page, current_page) {
   tagName.innerHTML = ''
-  current_page --
+  current_page--
   let start = current_page * item_per_page;
   let end = start + item_per_page;
   let pagedArray = array.slice(start, end)
   for (let i = 0; i < pagedArray.length; i++) {
-    renderArr(array[i].recipe, tagName)
+    renderArr(pagedArray[i].recipe)
   }
 }
 
 function setupPageBttn(array, tagName, item_per_page, current_page) {
-  let bttnCount = Math.ceil(array.length / item_per_page)
-  for(let i=1; i <= bttnCount; i++) {
+  tagName.innerHTML = ''
+  let page_count = Math.ceil(array.length / item_per_page)
+  for (let i = 1; i <= page_count; i++) {
     const bttn = document.createElement('button')
-    bttn.setAttribute("value", i)
+    bttn.setAttribute('value', i)
     bttn.textContent = i
-    tagName.append(bttn)
-    bttn.addEventListener('click', e => {
-      renderArr(array, foodContainer, item_per_page, e.target.value)
+    bttn.addEventListener('click', (e) => {
+      ingredContainer.innerHTML = ''
+      current_page = e.target.value
+      pagedArr(array, foodContainer, item_per_page, current_page)
     })
+    pagination.append(bttn)
   }
-
 }
 
 function renderArr(array, tagName) {
@@ -62,7 +64,7 @@ function renderArr(array, tagName) {
   h3.textContent = array.label
   mainP.textContent = `Cuisine Type : ${array.cuisineType}`
   foodList.append(img, h3, mainP)
-  tagName.append(foodList)
+  foodContainer.append(foodList)
   h3.addEventListener('click', () => {
     const ingredContainer = document.querySelector('#ingredContainer')
     ingredContainer.innerHTML = ''
