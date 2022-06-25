@@ -2,7 +2,7 @@
 
 ## Description
 
-  Recipe Finder is the project from Flatiron School. I used public API from 'https://www.edamam.com/' to find the recipe. You can search for food in your mind with meal time selection. When you click a list of food, you can see the ingredient. Also, we can sort the result into diets such as balanced, low carb, low fat, and so on.
+  Food Finder is the project from Flatiron School. I used public API from 'https://www.edamam.com/' to find the recipe. You can search for food in your mind with meal time selection. When you click a list of food, you can see the ingredient. Also, we can sort the result into diets such as balanced, low carb, low fat, and so on.
 
 ## Requirements
   node 14.17.5(at least)
