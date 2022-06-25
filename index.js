@@ -76,3 +76,18 @@ function renderArr(array, tagName) {
     })
   })
 }
+
+function sortBttn(array) {
+  const div = document.querySelector('#sortbttn')
+  div.innerHTML = `
+  <label for="dietlabel">Which one is good for</label>
+  <select name="dietlabel" id="dietlabel">
+        <option></option>
+        <option value="Balanced">Balanced</option>
+        <option value="High-Fiber">High Fiber</option>
+        <option value="Low-Carb">Low Carb</option>
+        <option value="Low-Fat">Low Fat</option>
+        <option value="Low-Sodium">Low Sodium</option>
+  </select>
+  `
+}
