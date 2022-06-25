@@ -22,7 +22,7 @@ function fetchFood(foodName, mealtype) {
       
       pagedArr(data.hits, foodContainer, item_per_page, current_page)
       setupPageBttn(data.hits, pagination, item_per_page, current_page)
-      
+      sortBttn(data.hits)
     })
 }
 
@@ -78,7 +78,7 @@ function renderArr(array, tagName) {
 }
 
 function sortBttn(array) {
-  const div = document.querySelector('#sortbttn')
+  const div = document.querySelector('#sortBttn')
   div.innerHTML = `
   <label for="dietlabel">Which one is good for</label>
   <select name="dietlabel" id="dietlabel">
