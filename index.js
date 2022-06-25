@@ -49,7 +49,7 @@ function setupPageBttn(array, tagName, item_per_page, current_page) {
       current_page = e.target.value
       pagedArr(array, foodContainer, item_per_page, current_page)
     })
-    pagination.append(bttn)
+    tagName.append(bttn)
   }
 }
 

@@ -65,12 +65,27 @@ aside {
 main section {
 	
 }
+#pagination {
+    align-content: flex-end;
+    align-items: baseline;
+}
+#pagination button {
+    width: 30px;
+    height : 30px;
+    background-color: bisque;
+    margin: 5px;
+  }
+  
+#pagination button:hover {
+    background-color: chartreuse;
+}
+  
 footer {
 	background: #e1eed4;
 	max-width: 900px;
 	margin: auto;
 	clear: both;
-	text-align: left;
+	text-align: center;
 }
 footer p {
 	padding: 5px;
@@ -102,6 +117,10 @@ body > section {
     border-bottom: 1px solid #999;
     color: #333;
 }
+#sortedFood {
+    background-color: aquamarine;
+    width : 400px
+  }
 
 @media screen and (max-width: 900px) {
 	body > section {
