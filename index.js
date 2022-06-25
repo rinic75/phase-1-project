@@ -21,7 +21,7 @@ function fetchFood(foodName, mealtype) {
       let item_per_page = 4
       
       pagedArr(data.hits, foodContainer, item_per_page, current_page)
-      //setupPagination(data.hits, pagination, item_per_page, current_page)
+      setupPageBttn(data.hits, pagination, item_per_page, current_page)
       
     })
 }
@@ -35,6 +35,20 @@ function pagedArr(array, tagName, item_per_page, current_page) {
   for (let i = 0; i < pagedArray.length; i++) {
     renderArr(array[i].recipe, tagName)
   }
+}
+
+function setupPageBttn(array, tagName, item_per_page, current_page) {
+  let bttnCount = Math.ceil(array.length / item_per_page)
+  for(let i=1; i <= bttnCount; i++) {
+    const bttn = document.createElement('button')
+    bttn.setAttribute("value", i)
+    bttn.textContent = i
+    tagName.append(bttn)
+    bttn.addEventListener('click', e => {
+      renderArr(array, foodContainer, item_per_page, e.target.value)
+    })
+  }
+
 }
 
 function renderArr(array, tagName) {
