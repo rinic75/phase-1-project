@@ -90,4 +90,6 @@ function sortBttn(array) {
         <option value="Low-Sodium">Low Sodium</option>
   </select>
   `
-}
+  const select = div.querySelector('#dietlabel')
+  select.addEventListener('change', e => {console.log(e.target.value)
+})
