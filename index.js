@@ -91,7 +91,7 @@ function sortBttn(array) {
   `
   const select = div.querySelector('#dietlabel')
   select.addEventListener('change', e => {
-    const div = document.querySelector('#sortedrecipe')
+    const div = document.querySelector('#sortedFood')
     div.innerHTML = ''
     const sortedArrData = array.filter(info => info.recipe.dietLabels.includes(e.target.value))
     sortedArrData.map((info => {
@@ -100,5 +100,4 @@ function sortBttn(array) {
       div.append(p)
     }))
   })
-
 }
