@@ -44,8 +44,8 @@ aside {
 }
 #foodList {
     border-bottom: 2px dotted #999;
-    padding-bottom: 20px;
-    margin-bottom: 20px;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
     overflow: hidden;
 }
 #foodList img {
@@ -53,7 +53,7 @@ aside {
     margin-right: 20px;
 }
 #foodList h3 {
-    margin-top: 20px;
+    margin-top: 25px;
     font-weight: normal;
     margin-bottom: 12px;
     
@@ -119,11 +119,11 @@ body > section {
   }
 
 
-@media screen and (max-width: 900px) {
+/* @media screen and (max-width: 900px) {
 	body > section {
-		padding: 30px 20px;
+		padding: 10px 10px;
 	}
-}
+} */
 @media screen and (max-width: 600px) {
 	main {
 		float: none;

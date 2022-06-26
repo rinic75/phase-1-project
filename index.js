@@ -22,7 +22,7 @@ function fetchFood(foodName, mealtype) {
       
       pagedArr(data.hits, foodContainer, item_per_page, current_page)
       setupPageBttn(data.hits, pagination, item_per_page, current_page)
-      sortBttn(data.hits)
+      sortBttn(data.hits, item_per_page)
     })
 }
 
@@ -76,7 +76,7 @@ function renderArr(array, tagName) {
   })
 }
 
-function sortBttn(array) {
+function sortBttn(array, item_per_page) {
   const div = document.querySelector('#sortBttn')
   div.innerHTML = `
   <label for="dietlabel">Which one is good for</label>
@@ -91,15 +91,17 @@ function sortBttn(array) {
   `
   const select = div.querySelector('#dietlabel')
   select.addEventListener('change', e => {
+
     const div = document.querySelector('#sortedFood')
     div.innerHTML = ''
     const sortedArrData = array.filter(info => info.recipe.dietLabels.includes(e.target.value))
+
     if(sortedArrData === []) {
       div.innerHTML = ''
     } else {
     sortedArrData.map(info => {
       const p = document.createElement('p')
-      p.textContent = info.recipe.label
+      p.textContent = `${info.recipe.label} - ${Math.ceil((array.indexOf(info)+1)/item_per_page)}`
       div.append(p)
     })}
   })
