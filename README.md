@@ -1,4 +1,4 @@
-# phase-1-project : Recipe Finder
+# phase-1-project : Food Finder
 
 ## Description
 
