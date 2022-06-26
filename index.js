@@ -94,10 +94,13 @@ function sortBttn(array) {
     const div = document.querySelector('#sortedFood')
     div.innerHTML = ''
     const sortedArrData = array.filter(info => info.recipe.dietLabels.includes(e.target.value))
-    sortedArrData.map((info => {
-      const p = document.querySelector('p')
+    if(sortedArrData === []) {
+      div.innerHTML = ''
+    } else {
+    sortedArrData.map(info => {
+      const p = document.createElement('p')
       p.textContent = info.recipe.label
       div.append(p)
-    }))
+    })}
   })
 }
