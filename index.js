@@ -91,6 +91,8 @@ function sortBttn(array) {
   `
   const select = div.querySelector('#dietlabel')
   select.addEventListener('change', e => {
-    
+    const div = document.querySelector('#sortedrecipe')
+    div.innerHTML = ''
+    const sortedArrData = data.filter(info => info.recipe.dietLabels === e.target.value)
   })
 }
