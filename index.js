@@ -31,7 +31,7 @@ function pagedArr(array, tagName, item_per_page, current_page) {
   let end = start + item_per_page;
   let pagedArray = array.slice(start, end)
   for (let i = 0; i < pagedArray.length; i++) {
-    renderArr(pagedArray[i].recipe)
+    renderArr(pagedArray[i].recipe,tagName)
   }
 }
 
@@ -62,7 +62,7 @@ function renderArr(array, tagName) {
   h3.textContent = array.label
   mainP.textContent = `Cuisine Type : ${array.cuisineType}`
   foodList.append(img, h3, mainP)
-  foodContainer.append(foodList)
+  tagName.append(foodList)
   h3.addEventListener('click', () => {
     const ingredContainer = document.querySelector('#ingredContainer')
     ingredContainer.innerHTML = ''
