@@ -88,6 +88,11 @@ footer p {
     padding: 5px;
     margin-left : 40px;
 }
+#sortedFood p {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 20px;
+}
 
 aside > div {
 	margin: 10px auto;

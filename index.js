@@ -16,10 +16,8 @@ function fetchFood(foodName, mealtype) {
     .then(data => {
       const foodContainer = document.querySelector('#foodContainer')
       const pagination = document.querySelector('#pagination')
-
       let current_page = 1
       let item_per_page = 4
-      
       pagedArr(data.hits, foodContainer, item_per_page, current_page)
       setupPageBttn(data.hits, pagination, item_per_page, current_page)
       sortBttn(data.hits, item_per_page)
@@ -79,7 +77,7 @@ function renderArr(array, tagName) {
 function sortBttn(array, item_per_page) {
   const div = document.querySelector('#sortBttn')
   div.innerHTML = `
-  <label for="dietlabel">Which one is good for</label>
+  <label for="dietlabel" style="font-size: 20px">Which one is good for</label>
   <select name="dietlabel" id="dietlabel">
         <option></option>
         <option value="Balanced">Balanced</option>
@@ -91,18 +89,17 @@ function sortBttn(array, item_per_page) {
   `
   const select = div.querySelector('#dietlabel')
   select.addEventListener('change', e => {
-
     const div = document.querySelector('#sortedFood')
     div.innerHTML = ''
     const sortedArrData = array.filter(info => info.recipe.dietLabels.includes(e.target.value))
-
-    if(sortedArrData === []) {
+    if (sortedArrData === []) {
       div.innerHTML = ''
     } else {
-    sortedArrData.map(info => {
-      const p = document.createElement('p')
-      p.textContent = `${info.recipe.label} - ${Math.ceil((array.indexOf(info)+1)/item_per_page)}`
-      div.append(p)
-    })}
+      sortedArrData.map(info => {
+        const p = document.createElement('p')
+        p.textContent = `${info.recipe.label} - Page ${Math.ceil((array.indexOf(info) + 1) / item_per_page)}`
+        div.append(p)
+      })
+    }
   })
 }
