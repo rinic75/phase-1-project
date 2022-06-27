@@ -95,7 +95,7 @@ function sortBttn(array, item_per_page) {
     if (sortedArrData === []) {
       div.innerHTML = ''
     } else {
-      sortedArrData.map(info => {
+      sortedArrData.forEach(info => {
         const p = document.createElement('p')
         p.textContent = `${info.recipe.label} - Page ${Math.ceil((array.indexOf(info) + 1) / item_per_page)}`
         div.append(p)
